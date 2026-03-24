@@ -20,6 +20,7 @@ async function loadPokemons() {
         allPokemons = await Promise.all(detailPromises);
 
         renderPokemons(allPokemons);
+        calculateTotalPower(allPokemons);
 
     } catch (error) {
         console.error("Erro na renderização:", error);
@@ -50,3 +51,46 @@ function renderPokemons(pokemonList) {
 }
 
 loadPokemons();
+
+const typeButtons = document.querySelectorAll('.filters .btn');
+
+typeButtons.forEach(button => {
+    button.addEventListener('click', (e) => {
+        typeButtons.forEach(btn => btn.classList.remove('active'));
+        e.target.classList.add('active');
+
+        const selectedType = e.target.getAttribute('data-type');
+        const emptyState = document.getElementById('emptyState');
+
+        if (selectedType === 'all') {
+            renderPokemons(allPokemons);
+            calculateTotalPower(allPokemons);
+            emptyState.classList.add('hidden');
+        } else {
+            const filteredPokemons = allPokemons.filter(pokemon => {
+                return pokemon.types.some(t => t.type.name === selectedType);
+            });
+
+            if (filteredPokemons.length === 0) {
+                pokemonGrid.innerHTML = '';
+                emptyState.classList.remove('hidden');
+            } else {
+                emptyState.classList.add('hidden');
+                renderPokemons(filteredPokemons);
+            }
+            
+            calculateTotalPower(filteredPokemons);
+        }
+    });
+});
+
+function calculateTotalPower(pokemonList) {
+    const totalPowerElement = document.getElementById('totalPower');
+    
+    const total = pokemonList.reduce((acumulador, pokemon) => {
+        const power = pokemon.base_experience || 0; 
+        return acumulador + power;
+    }, 0);
+
+    totalPowerElement.textContent = total;
+}
