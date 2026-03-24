@@ -31,4 +31,4 @@ Este projeto foi desenvolvido como atividade prática para o curso de Sistemas p
 
 1. Clone este repositório:
    ```bash
-   git clone [https://github.com/SEU_USUARIO/NOME_DO_REPO.git](https://github.com/SEU_USUARIO/NOME_DO_REPO.git)
+   git clone [https://github.com/V-Charles/project-pokedex.git](https://github.com/V-Charles/project-pokedex.git)
