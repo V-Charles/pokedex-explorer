@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokédex - Projeto</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1>Pokédex</h1>
+            
+            <div class="controls">
+                <input type="text" id="searchInput" placeholder="Buscar Pokémon por nome...">
+                
+                <div class="filters" id="typeFilters">
+                    <button class="btn active" data-type="all">Todos</button>
+                    <button class="btn" data-type="fire">Fogo</button>
+                    <button class="btn" data-type="water">Água</button>
+                    <button class="btn" data-type="grass">Grama</button>
+                </div>
+            </div>
+
+            <div class="stats">
+                <p>Poder total da lista: <span id="totalPower">0</span></p>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <div id="loading" class="feedback-state">
+            <span class="spinner"></span> Carregando Pokémon...
+        </div>
+        
+        <div id="errorState" class="feedback-state hidden">
+            <p>Ocorreu um erro ao carregar os dados. Tente novamente.</p>
+        </div>
+
+        <div id="emptyState" class="feedback-state hidden">
+            <p>Nenhum Pokémon encontrado com esse nome ou tipo.</p>
+        </div>
+
+        <section id="pokemonGrid" class="grid-container">
+            </section>
+    </main>
+
+    <script src="js/api.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
