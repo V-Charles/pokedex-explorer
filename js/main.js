@@ -94,3 +94,34 @@ function calculateTotalPower(pokemonList) {
 
     totalPowerElement.textContent = total;
 }
+
+const searchInput = document.getElementById('searchInput');
+
+searchInput.addEventListener('input', (e) => {
+    const searchTerm = e.target.value.toLowerCase().trim();
+    const emptyState = document.getElementById('emptyState');
+    const searchedPokemons = allPokemons.filter(pokemon => 
+        pokemon.name.includes(searchTerm)
+    );
+
+    if (searchedPokemons.length === 0) {
+        pokemonGrid.innerHTML = '';
+        emptyState.classList.remove('hidden');
+        document.getElementById('totalPower').textContent = '0';
+    } else {
+        emptyState.classList.add('hidden');
+        renderPokemons(searchedPokemons);
+        calculateTotalPower(searchedPokemons);
+    }
+});
+
+pokemonGrid.addEventListener('click', (e) => {
+    const card = e.target.closest('.card');
+    
+    if (card) {
+        const pokemonName = card.querySelector('h2').textContent;
+        const clickedPokemon = allPokemons.find(pokemon => pokemon.name === pokemonName);
+        
+        alert(`Você escolheu o ${clickedPokemon.name.toUpperCase()}!\nAltura: ${clickedPokemon.height / 10}m\nPeso: ${clickedPokemon.weight / 10}kg`);
+    }
+});
