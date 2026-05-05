@@ -1,34 +1,62 @@
-# ⚡ Pokédex - Iteradores JavaScript & PokeAPI
+# Pokédex Explorer
 
-Uma aplicação web interativa desenvolvida em JavaScript puro (Vanilla JS) para consumir dados da [PokeAPI](https://pokeapi.co/). O projeto funciona como uma Pokédex virtual, permitindo a busca, filtragem e visualização de detalhes dos Pokémon.
+![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
+![JavaScript](https://img.shields.io/badge/javascript-%23F7DF1E.svg?style=for-the-badge&logo=javascript&logoColor=black)
+![License](https://img.shields.io/badge/license-MIT-green?style=for-the-badge)
 
-## 🎯 Objetivo do Projeto
+### 💡 The "Why"
+Consuming and displaying data from large-scale public APIs requires efficient data handling and a clean UI. This project was built to explore asynchronous JavaScript and advanced array manipulation, providing a fast and responsive way to browse the Pokémon universe.
 
-Este projeto foi desenvolvido como atividade prática para o curso de Sistemas para Internet no Senac, com o objetivo de demonstrar o domínio sobre métodos de iteração de arrays no JavaScript, consumo de APIs RESTful assíncronas e manipulação dinâmica da interface do usuário (DOM).
+---
 
-## ✨ Funcionalidades
+### 🌐 Live Demo
+The application is live and can be accessed here:  
+🔗 **[Deploy on GitHub Pages](https://v-charles.github.io/pokedex-explorer/)**
 
-* **Listagem Dinâmica:** Carregamento inicial de 50 Pokémon com suas respectivas imagens, números e tipos.
-* **Sistema de Busca:** Filtro em tempo real pelo nome do Pokémon.
-* **Filtros por Tipo:** Botões interativos para isolar Pokémon por elementos (Fogo, Água, Grama, etc.).
-* **Cálculo de Status:** Somatório dinâmico do poder total (experiência base) dos Pokémon exibidos na tela.
-* **Detalhes sob Demanda:** Exibição de informações extras (peso e altura) ao clicar no card de um Pokémon.
-* **Tratamento de Estados (UI/UX):** Feedback visual claro para carregamento (loading), ausência de resultados e falhas de conexão com a API.
+---
 
-## 🛠️ Tecnologias e Conceitos Utilizados
+### 📷 Visual Proof
+<img width="1261" height="939" alt="Image" src="https://github.com/user-attachments/assets/5e613dab-31e1-4072-af42-ae9ddb261b3a" />
 
-* **HTML5 & CSS3:** Semântica, uso de variáveis CSS e layout responsivo com CSS Grid.
-* **JavaScript (ES6+):** * `async/await` e `fetch` para requisições HTTP e tratamento de `Promises`.
-  * `try/catch` para interceptação e tratamento de erros.
-* **Iteradores JavaScript Explorados:**
-  * `map()`: Para transformar respostas da API em elementos HTML na tela.
-  * `filter()`: Para o motor de busca textual e separação de categorias.
-  * `some()`: Utilizado em conjunto com o filter para varrer arrays internos (tipos do Pokémon).
-  * `reduce()`: Para o processamento matemático do "Poder Total" da lista atual.
-  * `find()`: Para localizar o objeto exato correspondente ao card clicado pelo usuário e exibir seus detalhes.
+---
 
-## 🚀 Como executar o projeto localmente
+### 🛠 Key Features
+* **External API Integration:** Real-time data fetching from the PokéAPI using `fetch` and `async/await`.
+* **Advanced Data Manipulation:** Implementation of `map()`, `filter()`, `reduce()`, and `find()` to process and display Pokémon statistics.
+* **Smart Search System:** Text-based search engine with category separation and real-time filtering.
+* **Responsive Grid Layout:** A mobile-first design built with CSS Grid and variables for seamless browsing across devices.
+* **Error Handling:** Robust `try/catch` implementation to manage API request failures gracefully.
 
-1. Clone este repositório:
+---
+
+### 📂 Project Structure
+<pre>
+pokedex-explorer/
+├── css/
+│   └── style.css      # Core styles and responsive layout
+├── js/
+│   ├── api.js         # API communication logic
+│   └── main.js        # DOM manipulation and application flow
+├── index.html         # Main entry point
+└── README.md          # Project documentation
+</pre>
+
+---
+
+### 🚀 How to Run
+**Prerequisites:**
+* A modern web browser (Chrome, Firefox, Edge, etc.)
+* A local server environment (like VS Code's "Live Server" extension) is recommended but not mandatory.
+
+**Steps:**
+1. **Clone the repository:**
    ```bash
-   git clone [https://github.com/V-Charles/project-pokedex.git](https://github.com/V-Charles/project-pokedex.git)
+   git clone [https://github.com/v-charles/pokedex-explorer.git](https://github.com/v-charles/pokedex-explorer.git)
+2. **Open the project:**
+   * Simply open the `index.html` file in your browser, or:
+   * If using VS Code, right-click `index.html` and select **"Open with Live Server"**.
+
+---
+
+Developed by [Vinicius Charles Macedo Dias](https://www.linkedin.com/in/vinicius-charles/)
